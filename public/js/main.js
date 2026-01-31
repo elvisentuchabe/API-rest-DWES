@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initGeolocalizacion();
 });
 
-const URL_JSON = 'productos.json';
+const URL_JSON = '/api/productos';
 let productosGlobales = []; 
 let usuarioActual = null; 
 let USUARIOS = []; 

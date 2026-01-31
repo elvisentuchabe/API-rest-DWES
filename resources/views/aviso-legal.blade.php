@@ -17,10 +17,10 @@
 
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fst-italic" href="index.html">SportSprint</a>
+            <a class="navbar-brand fst-italic" href="/">SportSprint</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Volver a la Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Volver a la Tienda</a></li>
                 </ul>
             </div>
         </div>
@@ -47,7 +47,7 @@
                         <p class="text-muted small">
                             El diseño, código fuente y contenidos de este sitio web están protegidos por derechos de propiedad intelectual.
                             Las imágenes utilizadas tienen licencias que permiten su uso o han sido generadas mediante IA. 
-                            Puedes consultar el detalle en nuestra sección de <a href="licencias.html" class="text-info">Licencias Multimedia</a>.
+                            Puedes consultar el detalle en nuestra sección de <a href="/licencias" class="text-info">Licencias Multimedia</a>.
                         </p>
                     </div>
                 </div>
@@ -86,8 +86,8 @@
                 <div class="col-md-4 mb-3">
                     <h5 class="text-uppercase text-primary">Enlaces</h5>
                     <ul class="list-unstyled">
-                        <li><a href="licencias.html" class="text-muted text-decoration-none hover-white">Licencias Multimedia</a></li>
-                        <li><a href="aviso-legal.html" class="text-white text-decoration-none fw-bold">Aviso Legal</a></li>
+                        <li><a href="/licencias" class="text-muted text-decoration-none hover-white">Licencias Multimedia</a></li>
+                        <li><a href="/aviso-legal" class="text-white text-decoration-none fw-bold">Aviso Legal</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-3">

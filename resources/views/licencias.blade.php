@@ -17,14 +17,14 @@
 
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fst-italic" href="index.html">SportSprint</a>
+            <a class="navbar-brand fst-italic" href="/">SportSprint</a>
             <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="menuPrincipal">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Volver a la Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Volver a la Tienda</a></li>
                 </ul>
             </div>
         </div>
@@ -63,8 +63,8 @@
                 <div class="col-md-4 mb-3">
                     <h5 class="text-uppercase text-primary">Enlaces</h5>
                     <ul class="list-unstyled">
-                        <li><a href="licencias.html" class="text-white text-decoration-none fw-bold">Licencias Multimedia</a></li>
-                        <li><a href="#" class="text-muted text-decoration-none hover-white">Aviso Legal</a></li>
+                        <li><a href="/licenciuas" class="text-white text-decoration-none fw-bold">Licencias Multimedia</a></li>
+                        <li><a href="/aviso-legal" class="text-muted text-decoration-none hover-white">Aviso Legal</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-3">

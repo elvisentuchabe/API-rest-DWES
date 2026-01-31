@@ -1,0 +1,258 @@
+/* --- SISTEMA DE DISEÑO (Cyber-Sport High Contrast) --- */
+:root {
+    /* Paleta de Colores */
+    --color-bg: #121212;
+    --color-card: #1e1e1e;
+    --color-primary: #00f3ff;
+    --color-secondary: #ffffff;
+    --color-text: #ffffff;
+    --color-text-muted: #b0b0b0;
+    
+    /* Tipografía */
+    --font-tech: 'Rajdhani', sans-serif;
+    
+    /* Efectos */
+    --neon-glow: 0 0 12px rgba(0, 243, 255, 0.6);
+}
+
+/* --- ESTILOS GENERALES --- */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-tech);
+    letter-spacing: 0.5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.text-muted { color: var(--color-text-muted) !important; }
+.text-dark { color: var(--color-text) !important; }
+
+/* --- NAVBAR --- */
+.navbar {
+    background-color: rgba(18, 18, 18, 0.95) !important;
+    border-bottom: 2px solid var(--color-primary);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    color: var(--color-primary) !important;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-shadow: var(--neon-glow);
+}
+
+.nav-link {
+    color: var(--color-text) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--color-primary) !important;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.5);
+}
+
+.navbar .bi {
+    font-size: 1.4rem;
+    transition: transform 0.2s;
+}
+.navbar a:hover .bi {
+    color: var(--color-primary) !important;
+    transform: scale(1.2);
+}
+
+/* --- CARRUSEL (SOLUCIÓN CLS) --- */
+/* IMPORTANTE: Reservamos el espacio para evitar el salto al cargar AJAX */
+#carruselDestacados {
+    min-height: 450px; 
+    background-color: #000; /* Fondo negro mientras carga */
+}
+
+.carousel-item {
+    height: 450px;
+    border-bottom: 2px solid var(--color-primary);
+}
+.carousel-item img {
+    filter: brightness(0.7);
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--color-primary);
+    padding: 20px;
+    box-shadow: var(--neon-glow);
+}
+.carousel-caption h3 { color: #fff; }
+
+/* --- TARJETAS DE PRODUCTO --- */
+.card-producto {
+    background-color: var(--color-card);
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card-producto:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+/* Altura fija para evitar saltos en el catálogo */
+.card-img-top {
+    height: 250px;       
+    object-fit: cover;   
+    width: 100%;
+    display: block;      
+    background-color: #2a2a2a; /* Color de fondo mientras carga la imagen (placeholder) */
+}
+
+/* --- OVERLAY HOVER --- */
+.descripcion-overlay {
+    background: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center; justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(3px);
+    z-index: 2;
+}
+
+.card-producto:hover .descripcion-overlay { 
+    opacity: 1; 
+}
+
+.icono-hover {
+    color: var(--color-primary);
+    filter: drop-shadow(0 0 8px var(--color-primary));
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-producto:hover .icono-hover {
+    transform: scale(1.1);
+}
+
+/* Textos tarjeta */
+.card-title {
+    color: #fff;
+    font-weight: 700;
+}
+.text-primary {
+    color: var(--color-primary) !important;
+    text-shadow: 0 0 5px rgba(0, 243, 255, 0.3);
+}
+
+/* --- BOTONES --- */
+.btn-primary, .btn-warning, .btn-dark {
+    background-color: var(--color-primary) !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.btn-primary:hover, .btn-warning:hover, .btn-dark:hover {
+    background-color: #fff !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+
+.btn-outline-primary {
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    background: transparent;
+    font-weight: 700;
+}
+.btn-outline-primary:hover, .btn-outline-primary.active {
+    background-color: var(--color-primary);
+    color: #000;
+}
+
+.btn-outline-secondary {
+    color: #fff;
+    border-color: #fff;
+}
+.btn-outline-secondary:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* --- MODALES Y OFFCANVAS --- */
+.modal-content, .offcanvas {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid var(--color-primary);
+}
+
+.modal-header, .offcanvas-header {
+    border-bottom: 1px solid #333;
+    background-color: #000;
+}
+
+.modal-footer, .offcanvas-footer {
+    border-top: 1px solid #333;
+    background-color: #000;
+}
+
+.form-control {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff !important;
+}
+.form-control:focus {
+    background-color: #333;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+}
+.form-control::placeholder {
+    color: #888;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+#inputBuscar {
+    width: 350px; /* Antes era automático, ahora forzamos anchura */
+    padding-right: 50px; /* Dejamos espacio hueco a la derecha para el micro */
+}
+
+/* En móviles, que no sea tan ancha para no romper el diseño */
+@media (max-width: 768px) {
+    #inputBuscar {
+        width: 100%; /* En móvil ocupa todo el ancho disponible */
+    }
+}
+
+/* 2. Ocultamos la "X" nativa del navegador que se solapa con el micro */
+#inputBuscar::-webkit-search-decoration,
+#inputBuscar::-webkit-search-cancel-button,
+#inputBuscar::-webkit-search-results-button,
+#inputBuscar::-webkit-search-results-decoration {
+    display: none; 
+    -webkit-appearance: none;
+}
+
+/* 3. Posicionamos el micro perfectamente centrado */
+#btnVoz {
+    right: 5px !important; /* Pegado a la derecha pero con margen */
+    top: 50%;
+    transform: translateY(-50%); /* Centrado vertical exacto */
+    z-index: 10; /* Aseguramos que esté por encima del texto */
+}

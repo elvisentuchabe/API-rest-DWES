@@ -10,9 +10,22 @@ class ProductoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        return response()->json(Producto::all(), 200);
+    public function index(Request $request) {
+        $query = Producto::query();
+
+        if ($request->has('categoria')) {
+            $query->where('categoria', $request->input('categoria'));
+        }
+
+        if ($request->has('precio_max')) {
+            $query->where('precio', '<=', $request->input('precio_max'));
+        }
+
+        if ($request->has('buscar')) {
+            $query->where('nombre', 'like', '%' . $request->input('buscar') . '%');
+        }
+
+        return response()->json($query->get(), 200);
     }
 
     /**

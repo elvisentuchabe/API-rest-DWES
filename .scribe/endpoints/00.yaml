@@ -52,7 +52,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Nivel Oro: Lectura con filtros'
+      title: ''
       description: ''
       authenticated: false
       deprecated: false
@@ -70,7 +70,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '[{"id":1,"nombre":"Nike Air Zoom Pegasus 40","precio":130,"descripcion":"La zapatilla de running m\u00e1s fiable y vers\u00e1til para entrenamiento diario.","imagen":"img\/nike_running_shoe.jpg","categoria":"running","visitas":5500,"stock":20,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":2,"nombre":"Adidas Ultraboost Light","precio":190,"descripcion":"Retorno de energ\u00eda incre\u00edble con un 30% menos de peso.","imagen":"img\/adidas_running_shoe.jpg","categoria":"running","visitas":4200,"stock":15,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":3,"nombre":"Asics Novablast 4","precio":150,"descripcion":"Efecto trampol\u00edn y m\u00e1xima reactividad para ritmos alegres.","imagen":"img\/asics_running_shoe.jpg","categoria":"running","visitas":3800,"stock":12,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":4,"nombre":"Hoka Clifton 9","precio":150,"descripcion":"Amortiguaci\u00f3n suave y ligera para devorar kil\u00f3metros sin impacto.","imagen":"img\/hoka_running_shoe.jpg","categoria":"running","visitas":4900,"stock":18,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":5,"nombre":"Saucony Endorphin Speed 4","precio":180,"descripcion":"Placa de nylon y espuma PWRRUN PB para entrenamientos r\u00e1pidos.","imagen":"img\/saucony_running_shoe.jpg","categoria":"running","visitas":2100,"stock":8,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":6,"nombre":"Brooks Ghost 15","precio":150,"descripcion":"Pisada suave y fluida, la favorita para corredores neutros.","imagen":"img\/brooks_running_shoe.jpg","categoria":"running","visitas":3100,"stock":25,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":7,"nombre":"New Balance Fresh Foam X 1080v13","precio":190,"descripcion":"La m\u00e1xima expresi\u00f3n de comodidad y amortiguaci\u00f3n de New Balance.","imagen":"img\/new_balance_running_shoe.jpg","categoria":"running","visitas":2800,"stock":10,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":8,"nombre":"Mizuno Wave Rider 27","precio":160,"descripcion":"Equilibrio perfecto entre propulsi\u00f3n y estabilidad.","imagen":"img\/mizuno_running_shoe.jpg","categoria":"running","visitas":1500,"stock":14,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":9,"nombre":"Garmin Forerunner 265","precio":500,"descripcion":"Reloj GPS con pantalla AMOLED brillante y m\u00e9tricas avanzadas.","imagen":"img\/sports_watch.jpg","categoria":"running","visitas":6200,"stock":5,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":10,"nombre":"Polar Pacer Pro","precio":330,"descripcion":"Reloj de running ultraligero con bar\u00f3metro integrado.","imagen":"img\/sports_watch.jpg","categoria":"running","visitas":1800,"stock":9,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":11,"nombre":"Coros Pace 3","precio":250,"descripcion":"La mejor bater\u00eda del mercado para un reloj GPS ligero.","imagen":"img\/sports_watch.jpg","categoria":"running","visitas":3500,"stock":20,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":12,"nombre":"Apple Watch Ultra 2","precio":900,"descripcion":"El reloj deportivo definitivo para aventuras extremas.","imagen":"img\/sports_watch.jpg","categoria":"running","visitas":8000,"stock":2,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":13,"nombre":"Auriculares Shokz OpenRun Pro","precio":190,"descripcion":"Conducci\u00f3n \u00f3sea para escuchar m\u00fasica sin aislarte del entorno.","imagen":"img\/headphones.jpg","categoria":"running","visitas":2200,"stock":30,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":14,"nombre":"Camiseta Nike Dri-FIT Miler","precio":35,"descripcion":"Tejido transpirable que capilariza el sudor.","imagen":"img\/t-shirt.jpg","categoria":"running","visitas":1200,"stock":50,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":15,"nombre":"Pantal\u00f3n Adidas Own The Run","precio":40,"descripcion":"Shorts ligeros con detalles reflectantes para la noche.","imagen":"img\/pantalon.jpg","categoria":"running","visitas":900,"stock":45,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":16,"nombre":"Calcetines Lurbel Desafio","precio":22,"descripcion":"Tecnolog\u00eda Bmax para prevenir ampollas en largas distancias.","imagen":"img\/calcetines.jpg","categoria":"running","visitas":600,"stock":100,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":17,"nombre":"Gorra Salomon XA Cap","precio":30,"descripcion":"Ligera, transpirable y de secado r\u00e1pido.","imagen":"img\/gorra.jpg","categoria":"running","visitas":400,"stock":25,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":18,"nombre":"Cintur\u00f3n Salomon Pulse Belt","precio":30,"descripcion":"Ajuste perfecto para llevar el m\u00f3vil y las llaves sin rebote.","imagen":"img\/cinturon.jpg","categoria":"running","visitas":1100,"stock":35,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":19,"nombre":"Chaleco Salomon Adv Skin 12","precio":160,"descripcion":"El rey de la hidrataci\u00f3n para trail running y ultra fondo.","imagen":"img\/chaleco_trail_running.jpg","categoria":"running","visitas":2500,"stock":7,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":20,"nombre":"Cortavientos Odlo Zeroweight","precio":100,"descripcion":"Protecci\u00f3n contra el viento en un paquete ultraligero.","imagen":"img\/cortavientos.jpg","categoria":"running","visitas":750,"stock":12,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":21,"nombre":"Nike Vaporfly 3","precio":260,"descripcion":"La zapatilla de competici\u00f3n m\u00e1s famosa con placa de carbono.","imagen":"img\/nike_running_shoe.jpg","categoria":"running","visitas":7000,"stock":3,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":22,"nombre":"Adidas Adizero Adios Pro 3","precio":250,"descripcion":"R\u00e9cords mundiales avalan esta zapatilla de marat\u00f3n.","imagen":"img\/adidas_running_shoe.jpg","categoria":"running","visitas":4500,"stock":4,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":23,"nombre":"Asics Metaspeed Sky Paris","precio":250,"descripcion":"Dise\u00f1ada para corredores que aumentan su zancada al acelerar.","imagen":"img\/asics_running_shoe.jpg","categoria":"running","visitas":3200,"stock":5,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":24,"nombre":"On Running Cloudmonster","precio":180,"descripcion":"La mayor amortiguaci\u00f3n CloudTec para una pisada monstruosa.","imagen":"img\/saucony_running_shoe.jpg","categoria":"running","visitas":2900,"stock":11,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":25,"nombre":"Pack Geles Maurten Gel 100","precio":40,"descripcion":"Caja de 12 geles con tecnolog\u00eda de hidrogel para evitar problemas estomacales.","imagen":"img\/geles.jpg","categoria":"running","visitas":1500,"stock":60,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":26,"nombre":"Specialized Tarmac SL8 Pro","precio":6500,"descripcion":"La bicicleta m\u00e1s r\u00e1pida del mundo, combinaci\u00f3n de aero y ligereza.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":9000,"stock":1,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":27,"nombre":"Trek Madone SLR 7","precio":9000,"descripcion":"Tecnolog\u00eda IsoFlow para una aerodin\u00e1mica sin precedentes.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":8500,"stock":1,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":28,"nombre":"Canyon Ultimate CF SL 8","precio":3000,"descripcion":"Relaci\u00f3n calidad-precio imbatible para una escaladora pura.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":6700,"stock":3,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":29,"nombre":"Orbea Orca M30","precio":2600,"descripcion":"Bicicleta de carretera de carbono ligera y reactiva.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":5200,"stock":5,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":30,"nombre":"Giant Propel Advanced","precio":3200,"descripcion":"Minimiza la resistencia al aire y maximiza la velocidad.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":4100,"stock":2,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":31,"nombre":"Casco Specialized S-Works Evade 3","precio":300,"descripcion":"El casco aero m\u00e1s ventilado del pelot\u00f3n.","imagen":"img\/casco.jpg","categoria":"ciclismo","visitas":3200,"stock":10,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":32,"nombre":"Casco Giro Aether Spherical","precio":320,"descripcion":"Protecci\u00f3n MIPS Spherical integrada para m\u00e1xima seguridad.","imagen":"img\/casco.jpg","categoria":"ciclismo","visitas":1500,"stock":8,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":33,"nombre":"Casco POC Ventral Air Mips","precio":260,"descripcion":"Dise\u00f1o \u00fanico y ventilaci\u00f3n extrema para d\u00edas calurosos.","imagen":"img\/casco.jpg","categoria":"ciclismo","visitas":2100,"stock":12,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":34,"nombre":"Gafas Oakley Sutro Lite","precio":170,"descripcion":"Campo de visi\u00f3n amplio y lentes Prizm de alto contraste.","imagen":"img\/gafas.jpg","categoria":"ciclismo","visitas":4800,"stock":25,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":35,"nombre":"Gafas 100% Speedcraft","precio":190,"descripcion":"Las gafas favoritas de Peter Sagan.","imagen":"img\/gafas.jpg","categoria":"ciclismo","visitas":3000,"stock":20,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":36,"nombre":"Maillot Castelli Gabba RoS 2","precio":200,"descripcion":"La prenda original para lluvia y fr\u00edo, ahora mejorada.","imagen":"img\/maillot.jpg","categoria":"ciclismo","visitas":2500,"stock":15,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":37,"nombre":"Culotte Assos Equipe RS","precio":240,"descripcion":"El est\u00e1ndar de oro en comodidad para largas distancias.","imagen":"img\/culotte.jpg","categoria":"ciclismo","visitas":1800,"stock":10,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":38,"nombre":"Maillot Gobik CX Pro 3.0","precio":75,"descripcion":"Ultraligero y ajustado, dise\u00f1o espa\u00f1ol de moda.","imagen":"img\/maillot.jpg","categoria":"ciclismo","visitas":5500,"stock":30,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":39,"nombre":"Culotte Gobik Absolute","precio":120,"descripcion":"Compresi\u00f3n excelente y badana K10 de carbono.","imagen":"img\/culotte.jpg","categoria":"ciclismo","visitas":5200,"stock":25,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":40,"nombre":"Zapatillas Shimano S-Phyre RC903","precio":380,"descripcion":"Transferencia de potencia profesional y ajuste BOA doble.","imagen":"img\/zapatillas.jpg","categoria":"ciclismo","visitas":2000,"stock":6,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":41,"nombre":"Zapatillas Fizik Vento Infinito","precio":350,"descripcion":"Suela de carbono r\u00edgida y dise\u00f1o italiano elegante.","imagen":"img\/zapatillas.jpg","categoria":"ciclismo","visitas":1200,"stock":8,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":42,"nombre":"Garmin Edge 1040 Solar","precio":750,"descripcion":"El ciclocomputador definitivo con carga solar.","imagen":"img\/ciclocomputador.jpg","categoria":"ciclismo","visitas":6500,"stock":4,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":43,"nombre":"Wahoo Elemnt Bolt V2","precio":280,"descripcion":"Navegaci\u00f3n aerodin\u00e1mica y f\u00e1cil de usar.","imagen":"img\/ciclocomputador.jpg","categoria":"ciclismo","visitas":3100,"stock":12,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":44,"nombre":"Radar Garmin Varia RTL515","precio":200,"descripcion":"Luz trasera que te avisa de los coches que se acercan.","imagen":"img\/radar.jpg","categoria":"ciclismo","visitas":5800,"stock":20,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":45,"nombre":"Pedales Shimano Ultegra","precio":150,"descripcion":"Cuerpo de carbono compuesto, ligeros y duraderos.","imagen":"img\/pedales.jpg","categoria":"ciclismo","visitas":2200,"stock":30,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":46,"nombre":"Potenci\u00f3metro Favero Assioma Duo","precio":700,"descripcion":"Medici\u00f3n de potencia en ambos pedales, fiable y preciso.","imagen":"img\/potenciometro.jpg","categoria":"ciclismo","visitas":1900,"stock":5,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":47,"nombre":"Rodillo Wahoo Kickr Core","precio":600,"descripcion":"Entrenamiento indoor silencioso y realista.","imagen":"img\/rodillo.jpg","categoria":"ciclismo","visitas":2400,"stock":3,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":48,"nombre":"Cubierta Continental GP5000 S TR","precio":80,"descripcion":"El neum\u00e1tico tubeless m\u00e1s r\u00e1pido y resistente.","imagen":"img\/cubierta.jpg","categoria":"ciclismo","visitas":7000,"stock":100,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":49,"nombre":"Bomba Topeak JoeBlow Sport","precio":50,"descripcion":"La bomba de pie cl\u00e1sica, robusta y fiable.","imagen":"img\/bomba.jpg","categoria":"ciclismo","visitas":800,"stock":15,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":50,"nombre":"Bolsa Sill\u00edn Ortlieb Micro Two","precio":40,"descripcion":"Impermeable y compacta para llevar herramientas.","imagen":"img\/bolsa_sillin.jpg","categoria":"ciclismo","visitas":600,"stock":22,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"}]'
+        content: '[{"id":2,"nombre":"Adidas Ultraboost Light","precio":190,"descripcion":"Retorno de energ\u00eda incre\u00edble con un 30% menos de peso.","imagen":"img\/adidas_running_shoe.jpg","categoria":"running","visitas":4200,"stock":15,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":3,"nombre":"Asics Novablast 4","precio":150,"descripcion":"Efecto trampol\u00edn y m\u00e1xima reactividad para ritmos alegres.","imagen":"img\/asics_running_shoe.jpg","categoria":"running","visitas":3800,"stock":12,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":4,"nombre":"Hoka Clifton 9","precio":150,"descripcion":"Amortiguaci\u00f3n suave y ligera para devorar kil\u00f3metros sin impacto.","imagen":"img\/hoka_running_shoe.jpg","categoria":"running","visitas":4900,"stock":18,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":5,"nombre":"Saucony Endorphin Speed 4","precio":180,"descripcion":"Placa de nylon y espuma PWRRUN PB para entrenamientos r\u00e1pidos.","imagen":"img\/saucony_running_shoe.jpg","categoria":"running","visitas":2100,"stock":8,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":6,"nombre":"Brooks Ghost 15","precio":150,"descripcion":"Pisada suave y fluida, la favorita para corredores neutros.","imagen":"img\/brooks_running_shoe.jpg","categoria":"running","visitas":3100,"stock":25,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":7,"nombre":"New Balance Fresh Foam X 1080v13","precio":190,"descripcion":"La m\u00e1xima expresi\u00f3n de comodidad y amortiguaci\u00f3n de New Balance.","imagen":"img\/new_balance_running_shoe.jpg","categoria":"running","visitas":2800,"stock":10,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":8,"nombre":"Mizuno Wave Rider 27","precio":160,"descripcion":"Equilibrio perfecto entre propulsi\u00f3n y estabilidad.","imagen":"img\/mizuno_running_shoe.jpg","categoria":"running","visitas":1500,"stock":14,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":9,"nombre":"Garmin Forerunner 265","precio":500,"descripcion":"Reloj GPS con pantalla AMOLED brillante y m\u00e9tricas avanzadas.","imagen":"img\/sports_watch.jpg","categoria":"running","visitas":6200,"stock":5,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":10,"nombre":"Polar Pacer Pro","precio":330,"descripcion":"Reloj de running ultraligero con bar\u00f3metro integrado.","imagen":"img\/sports_watch.jpg","categoria":"running","visitas":1800,"stock":9,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":11,"nombre":"Coros Pace 3","precio":250,"descripcion":"La mejor bater\u00eda del mercado para un reloj GPS ligero.","imagen":"img\/sports_watch.jpg","categoria":"running","visitas":3500,"stock":20,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":12,"nombre":"Apple Watch Ultra 2","precio":900,"descripcion":"El reloj deportivo definitivo para aventuras extremas.","imagen":"img\/sports_watch.jpg","categoria":"running","visitas":8000,"stock":2,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":13,"nombre":"Auriculares Shokz OpenRun Pro","precio":190,"descripcion":"Conducci\u00f3n \u00f3sea para escuchar m\u00fasica sin aislarte del entorno.","imagen":"img\/headphones.jpg","categoria":"running","visitas":2200,"stock":30,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":14,"nombre":"Camiseta Nike Dri-FIT Miler","precio":35,"descripcion":"Tejido transpirable que capilariza el sudor.","imagen":"img\/t-shirt.jpg","categoria":"running","visitas":1200,"stock":50,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":15,"nombre":"Pantal\u00f3n Adidas Own The Run","precio":40,"descripcion":"Shorts ligeros con detalles reflectantes para la noche.","imagen":"img\/pantalon.jpg","categoria":"running","visitas":900,"stock":45,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":16,"nombre":"Calcetines Lurbel Desafio","precio":22,"descripcion":"Tecnolog\u00eda Bmax para prevenir ampollas en largas distancias.","imagen":"img\/calcetines.jpg","categoria":"running","visitas":600,"stock":100,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":17,"nombre":"Gorra Salomon XA Cap","precio":30,"descripcion":"Ligera, transpirable y de secado r\u00e1pido.","imagen":"img\/gorra.jpg","categoria":"running","visitas":400,"stock":25,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":18,"nombre":"Cintur\u00f3n Salomon Pulse Belt","precio":30,"descripcion":"Ajuste perfecto para llevar el m\u00f3vil y las llaves sin rebote.","imagen":"img\/cinturon.jpg","categoria":"running","visitas":1100,"stock":35,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":19,"nombre":"Chaleco Salomon Adv Skin 12","precio":160,"descripcion":"El rey de la hidrataci\u00f3n para trail running y ultra fondo.","imagen":"img\/chaleco_trail_running.jpg","categoria":"running","visitas":2500,"stock":7,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":20,"nombre":"Cortavientos Odlo Zeroweight","precio":100,"descripcion":"Protecci\u00f3n contra el viento en un paquete ultraligero.","imagen":"img\/cortavientos.jpg","categoria":"running","visitas":750,"stock":12,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":21,"nombre":"Nike Vaporfly 3","precio":260,"descripcion":"La zapatilla de competici\u00f3n m\u00e1s famosa con placa de carbono.","imagen":"img\/nike_running_shoe.jpg","categoria":"running","visitas":7000,"stock":3,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":22,"nombre":"Adidas Adizero Adios Pro 3","precio":250,"descripcion":"R\u00e9cords mundiales avalan esta zapatilla de marat\u00f3n.","imagen":"img\/adidas_running_shoe.jpg","categoria":"running","visitas":4500,"stock":4,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":23,"nombre":"Asics Metaspeed Sky Paris","precio":250,"descripcion":"Dise\u00f1ada para corredores que aumentan su zancada al acelerar.","imagen":"img\/asics_running_shoe.jpg","categoria":"running","visitas":3200,"stock":5,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":24,"nombre":"On Running Cloudmonster","precio":180,"descripcion":"La mayor amortiguaci\u00f3n CloudTec para una pisada monstruosa.","imagen":"img\/saucony_running_shoe.jpg","categoria":"running","visitas":2900,"stock":11,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":25,"nombre":"Pack Geles Maurten Gel 100","precio":40,"descripcion":"Caja de 12 geles con tecnolog\u00eda de hidrogel para evitar problemas estomacales.","imagen":"img\/geles.jpg","categoria":"running","visitas":1500,"stock":60,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":26,"nombre":"Specialized Tarmac SL8 Pro","precio":6500,"descripcion":"La bicicleta m\u00e1s r\u00e1pida del mundo, combinaci\u00f3n de aero y ligereza.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":9000,"stock":1,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":27,"nombre":"Trek Madone SLR 7","precio":9000,"descripcion":"Tecnolog\u00eda IsoFlow para una aerodin\u00e1mica sin precedentes.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":8500,"stock":1,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":28,"nombre":"Canyon Ultimate CF SL 8","precio":3000,"descripcion":"Relaci\u00f3n calidad-precio imbatible para una escaladora pura.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":6700,"stock":3,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":29,"nombre":"Orbea Orca M30","precio":2600,"descripcion":"Bicicleta de carretera de carbono ligera y reactiva.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":5200,"stock":5,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":30,"nombre":"Giant Propel Advanced","precio":3200,"descripcion":"Minimiza la resistencia al aire y maximiza la velocidad.","imagen":"img\/bicicleta.jpg","categoria":"ciclismo","visitas":4100,"stock":2,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":31,"nombre":"Casco Specialized S-Works Evade 3","precio":300,"descripcion":"El casco aero m\u00e1s ventilado del pelot\u00f3n.","imagen":"img\/casco.jpg","categoria":"ciclismo","visitas":3200,"stock":10,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":32,"nombre":"Casco Giro Aether Spherical","precio":320,"descripcion":"Protecci\u00f3n MIPS Spherical integrada para m\u00e1xima seguridad.","imagen":"img\/casco.jpg","categoria":"ciclismo","visitas":1500,"stock":8,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":33,"nombre":"Casco POC Ventral Air Mips","precio":260,"descripcion":"Dise\u00f1o \u00fanico y ventilaci\u00f3n extrema para d\u00edas calurosos.","imagen":"img\/casco.jpg","categoria":"ciclismo","visitas":2100,"stock":12,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":34,"nombre":"Gafas Oakley Sutro Lite","precio":170,"descripcion":"Campo de visi\u00f3n amplio y lentes Prizm de alto contraste.","imagen":"img\/gafas.jpg","categoria":"ciclismo","visitas":4800,"stock":25,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":35,"nombre":"Gafas 100% Speedcraft","precio":190,"descripcion":"Las gafas favoritas de Peter Sagan.","imagen":"img\/gafas.jpg","categoria":"ciclismo","visitas":3000,"stock":20,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":36,"nombre":"Maillot Castelli Gabba RoS 2","precio":200,"descripcion":"La prenda original para lluvia y fr\u00edo, ahora mejorada.","imagen":"img\/maillot.jpg","categoria":"ciclismo","visitas":2500,"stock":15,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":37,"nombre":"Culotte Assos Equipe RS","precio":240,"descripcion":"El est\u00e1ndar de oro en comodidad para largas distancias.","imagen":"img\/culotte.jpg","categoria":"ciclismo","visitas":1800,"stock":10,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":38,"nombre":"Maillot Gobik CX Pro 3.0","precio":75,"descripcion":"Ultraligero y ajustado, dise\u00f1o espa\u00f1ol de moda.","imagen":"img\/maillot.jpg","categoria":"ciclismo","visitas":5500,"stock":30,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":39,"nombre":"Culotte Gobik Absolute","precio":120,"descripcion":"Compresi\u00f3n excelente y badana K10 de carbono.","imagen":"img\/culotte.jpg","categoria":"ciclismo","visitas":5200,"stock":25,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":40,"nombre":"Zapatillas Shimano S-Phyre RC903","precio":380,"descripcion":"Transferencia de potencia profesional y ajuste BOA doble.","imagen":"img\/zapatillas.jpg","categoria":"ciclismo","visitas":2000,"stock":6,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":41,"nombre":"Zapatillas Fizik Vento Infinito","precio":350,"descripcion":"Suela de carbono r\u00edgida y dise\u00f1o italiano elegante.","imagen":"img\/zapatillas.jpg","categoria":"ciclismo","visitas":1200,"stock":8,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":42,"nombre":"Garmin Edge 1040 Solar","precio":750,"descripcion":"El ciclocomputador definitivo con carga solar.","imagen":"img\/ciclocomputador.jpg","categoria":"ciclismo","visitas":6500,"stock":4,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":43,"nombre":"Wahoo Elemnt Bolt V2","precio":280,"descripcion":"Navegaci\u00f3n aerodin\u00e1mica y f\u00e1cil de usar.","imagen":"img\/ciclocomputador.jpg","categoria":"ciclismo","visitas":3100,"stock":12,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":44,"nombre":"Radar Garmin Varia RTL515","precio":200,"descripcion":"Luz trasera que te avisa de los coches que se acercan.","imagen":"img\/radar.jpg","categoria":"ciclismo","visitas":5800,"stock":20,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":45,"nombre":"Pedales Shimano Ultegra","precio":150,"descripcion":"Cuerpo de carbono compuesto, ligeros y duraderos.","imagen":"img\/pedales.jpg","categoria":"ciclismo","visitas":2200,"stock":30,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":46,"nombre":"Potenci\u00f3metro Favero Assioma Duo","precio":700,"descripcion":"Medici\u00f3n de potencia en ambos pedales, fiable y preciso.","imagen":"img\/potenciometro.jpg","categoria":"ciclismo","visitas":1900,"stock":5,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":47,"nombre":"Rodillo Wahoo Kickr Core","precio":600,"descripcion":"Entrenamiento indoor silencioso y realista.","imagen":"img\/rodillo.jpg","categoria":"ciclismo","visitas":2400,"stock":3,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":48,"nombre":"Cubierta Continental GP5000 S TR","precio":80,"descripcion":"El neum\u00e1tico tubeless m\u00e1s r\u00e1pido y resistente.","imagen":"img\/cubierta.jpg","categoria":"ciclismo","visitas":7000,"stock":100,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":49,"nombre":"Bomba Topeak JoeBlow Sport","precio":50,"descripcion":"La bomba de pie cl\u00e1sica, robusta y fiable.","imagen":"img\/bomba.jpg","categoria":"ciclismo","visitas":800,"stock":15,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":50,"nombre":"Bolsa Sill\u00edn Ortlieb Micro Two","precio":40,"descripcion":"Impermeable y compacta para llevar herramientas.","imagen":"img\/bolsa_sillin.jpg","categoria":"ciclismo","visitas":600,"stock":22,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"},{"id":51,"nombre":"Zapatilla Postman","precio":89.99,"descripcion":"Creada desde Postman","imagen":null,"categoria":"ciclismo","visitas":0,"stock":5,"created_at":"2026-02-01T09:17:54.000000Z","updated_at":"2026-02-01T09:17:54.000000Z"}]'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -103,8 +103,80 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      nombre:
+        custom: []
+        name: nombre
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      precio:
+        custom: []
+        name: precio
+        description: 'Must be at least 0.'
+        required: true
+        example: 39
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      categoria:
+        custom: []
+        name: categoria
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      imagen:
+        custom: []
+        name: imagen
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      descripcion:
+        custom: []
+        name: descripcion
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      stock:
+        custom: []
+        name: stock
+        description: 'Must be at least 0.'
+        required: false
+        example: 39
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      nombre: b
+      precio: 39
+      categoria: architecto
+      imagen: architecto
+      descripcion: architecto
+      stock: 39
     fileParameters: []
     responses: []
     responseFields: []
@@ -136,14 +208,14 @@ endpoints:
         name: id
         description: 'The ID of the producto.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -153,7 +225,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"id":1,"nombre":"Nike Air Zoom Pegasus 40","precio":130,"descripcion":"La zapatilla de running m\u00e1s fiable y vers\u00e1til para entrenamiento diario.","imagen":"img\/nike_running_shoe.jpg","categoria":"running","visitas":5500,"stock":20,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"}'
+        content: '{"id":2,"nombre":"Adidas Ultraboost Light","precio":190,"descripcion":"Retorno de energ\u00eda incre\u00edble con un 30% menos de peso.","imagen":"img\/adidas_running_shoe.jpg","categoria":"running","visitas":4200,"stock":15,"created_at":"2026-01-31T22:06:05.000000Z","updated_at":"2026-01-31T22:06:05.000000Z"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -189,18 +261,66 @@ endpoints:
         name: id
         description: 'The ID of the producto.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 2
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      nombre:
+        custom: []
+        name: nombre
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: b
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      precio:
+        custom: []
+        name: precio
+        description: 'Must be at least 0.'
+        required: false
+        example: 39
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      categoria:
+        custom: []
+        name: categoria
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      stock:
+        custom: []
+        name: stock
+        description: 'Must be at least 0.'
+        required: false
+        example: 39
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      nombre: b
+      precio: 39
+      categoria: architecto
+      stock: 39
     fileParameters: []
     responses: []
     responseFields: []
@@ -232,14 +352,14 @@ endpoints:
         name: id
         description: 'The ID of the producto.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

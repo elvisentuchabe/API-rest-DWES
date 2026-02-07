@@ -30,9 +30,9 @@
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
-    <script src="{{ asset("/vendor/scribe/js/tryitout-5.6.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/tryitout-5.7.0.js") }}"></script>
 
-    <script src="{{ asset("/vendor/scribe/js/theme-default-5.6.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/theme-default-5.7.0.js") }}"></script>
 
 </head>
 
@@ -75,7 +75,7 @@
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-productos">
-                                <a href="#endpoints-GETapi-productos">Nivel Oro: Lectura con filtros</a>
+                                <a href="#endpoints-GETapi-productos">GET api/productos</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-productos">
                                 <a href="#endpoints-POSTapi-productos">POST api/productos</a>
@@ -100,7 +100,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: February 1, 2026</li>
+        <li>Last updated: February 7, 2026</li>
     </ul>
 </div>
 
@@ -249,7 +249,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-productos">Nivel Oro: Lectura con filtros</h2>
+                    <h2 id="endpoints-GETapi-productos">GET api/productos</h2>
 
 <p>
 </p>
@@ -298,18 +298,6 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">[
-    {
-        &quot;id&quot;: 1,
-        &quot;nombre&quot;: &quot;Nike Air Zoom Pegasus 40&quot;,
-        &quot;precio&quot;: 130,
-        &quot;descripcion&quot;: &quot;La zapatilla de running m&aacute;s fiable y vers&aacute;til para entrenamiento diario.&quot;,
-        &quot;imagen&quot;: &quot;img/nike_running_shoe.jpg&quot;,
-        &quot;categoria&quot;: &quot;running&quot;,
-        &quot;visitas&quot;: 5500,
-        &quot;stock&quot;: 20,
-        &quot;created_at&quot;: &quot;2026-01-31T22:06:05.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2026-01-31T22:06:05.000000Z&quot;
-    },
     {
         &quot;id&quot;: 2,
         &quot;nombre&quot;: &quot;Adidas Ultraboost Light&quot;,
@@ -897,6 +885,18 @@ access-control-allow-origin: *
         &quot;stock&quot;: 22,
         &quot;created_at&quot;: &quot;2026-01-31T22:06:05.000000Z&quot;,
         &quot;updated_at&quot;: &quot;2026-01-31T22:06:05.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 51,
+        &quot;nombre&quot;: &quot;Zapatilla Postman&quot;,
+        &quot;precio&quot;: 89.99,
+        &quot;descripcion&quot;: &quot;Creada desde Postman&quot;,
+        &quot;imagen&quot;: null,
+        &quot;categoria&quot;: &quot;ciclismo&quot;,
+        &quot;visitas&quot;: 0,
+        &quot;stock&quot;: 5,
+        &quot;created_at&quot;: &quot;2026-02-01T09:17:54.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2026-02-01T09:17:54.000000Z&quot;
     }
 ]</code>
  </pre>
@@ -989,7 +989,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/productos" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"nombre\": \"b\",
+    \"precio\": 39,
+    \"categoria\": \"architecto\",
+    \"imagen\": \"architecto\",
+    \"descripcion\": \"architecto\",
+    \"stock\": 39
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
@@ -1002,9 +1011,19 @@ const headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "nombre": "b",
+    "precio": 39,
+    "categoria": "architecto",
+    "imagen": "architecto",
+    "descripcion": "architecto",
+    "stock": 39
+};
+
 fetch(url, {
     method: "POST",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -1082,7 +1101,80 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>nombre</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="nombre"                data-endpoint="POSTapi-productos"
+               value="b"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>b</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>precio</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="precio"                data-endpoint="POSTapi-productos"
+               value="39"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>39</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>categoria</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="categoria"                data-endpoint="POSTapi-productos"
+               value="architecto"
+               data-component="body">
+    <br>
+<p>Example: <code>architecto</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>imagen</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="imagen"                data-endpoint="POSTapi-productos"
+               value="architecto"
+               data-component="body">
+    <br>
+<p>Example: <code>architecto</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>descripcion</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="descripcion"                data-endpoint="POSTapi-productos"
+               value="architecto"
+               data-component="body">
+    <br>
+<p>Example: <code>architecto</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>stock</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="stock"                data-endpoint="POSTapi-productos"
+               value="39"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>39</code></p>
+        </div>
+        </form>
 
                     <h2 id="endpoints-GETapi-productos--id-">GET api/productos/{id}</h2>
 
@@ -1097,14 +1189,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/productos/1" \
+    --get "http://localhost/api/productos/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/productos/1"
+    "http://localhost/api/productos/2"
 );
 
 const headers = {
@@ -1133,14 +1225,14 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;id&quot;: 1,
-    &quot;nombre&quot;: &quot;Nike Air Zoom Pegasus 40&quot;,
-    &quot;precio&quot;: 130,
-    &quot;descripcion&quot;: &quot;La zapatilla de running m&aacute;s fiable y vers&aacute;til para entrenamiento diario.&quot;,
-    &quot;imagen&quot;: &quot;img/nike_running_shoe.jpg&quot;,
+    &quot;id&quot;: 2,
+    &quot;nombre&quot;: &quot;Adidas Ultraboost Light&quot;,
+    &quot;precio&quot;: 190,
+    &quot;descripcion&quot;: &quot;Retorno de energ&iacute;a incre&iacute;ble con un 30% menos de peso.&quot;,
+    &quot;imagen&quot;: &quot;img/adidas_running_shoe.jpg&quot;,
     &quot;categoria&quot;: &quot;running&quot;,
-    &quot;visitas&quot;: 5500,
-    &quot;stock&quot;: 20,
+    &quot;visitas&quot;: 4200,
+    &quot;stock&quot;: 15,
     &quot;created_at&quot;: &quot;2026-01-31T22:06:05.000000Z&quot;,
     &quot;updated_at&quot;: &quot;2026-01-31T22:06:05.000000Z&quot;
 }</code>
@@ -1225,10 +1317,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-productos--id-"
-               value="1"
+               value="2"
                data-component="url">
     <br>
-<p>The ID of the producto. Example: <code>1</code></p>
+<p>The ID of the producto. Example: <code>2</code></p>
             </div>
                     </form>
 
@@ -1245,14 +1337,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/productos/1" \
+    "http://localhost/api/productos/2" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"nombre\": \"b\",
+    \"precio\": 39,
+    \"categoria\": \"architecto\",
+    \"stock\": 39
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/productos/1"
+    "http://localhost/api/productos/2"
 );
 
 const headers = {
@@ -1260,9 +1359,17 @@ const headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "nombre": "b",
+    "precio": 39,
+    "categoria": "architecto",
+    "stock": 39
+};
+
 fetch(url, {
     method: "PUT",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -1352,12 +1459,61 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-productos--id-"
-               value="1"
+               value="2"
                data-component="url">
     <br>
-<p>The ID of the producto. Example: <code>1</code></p>
+<p>The ID of the producto. Example: <code>2</code></p>
             </div>
-                    </form>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>nombre</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="nombre"                data-endpoint="PUTapi-productos--id-"
+               value="b"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>b</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>precio</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="precio"                data-endpoint="PUTapi-productos--id-"
+               value="39"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>39</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>categoria</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="categoria"                data-endpoint="PUTapi-productos--id-"
+               value="architecto"
+               data-component="body">
+    <br>
+<p>Example: <code>architecto</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>stock</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="stock"                data-endpoint="PUTapi-productos--id-"
+               value="39"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>39</code></p>
+        </div>
+        </form>
 
                     <h2 id="endpoints-DELETEapi-productos--id-">DELETE api/productos/{id}</h2>
 
@@ -1372,14 +1528,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/productos/1" \
+    "http://localhost/api/productos/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/productos/1"
+    "http://localhost/api/productos/2"
 );
 
 const headers = {
@@ -1475,10 +1631,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-productos--id-"
-               value="1"
+               value="2"
                data-component="url">
     <br>
-<p>The ID of the producto. Example: <code>1</code></p>
+<p>The ID of the producto. Example: <code>2</code></p>
             </div>
                     </form>
 

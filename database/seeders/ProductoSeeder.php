@@ -10,7 +10,6 @@ class ProductoSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Buscamos el archivo
         $ruta = base_path('productos.json');
         $this->command->info("Buscando archivo en: " . $ruta);
 
@@ -20,7 +19,6 @@ class ProductoSeeder extends Seeder
             return;
         }
 
-        // 2. Leemos el archivo
         $json = File::get($ruta);
         $productos = json_decode($json);
 
@@ -29,7 +27,6 @@ class ProductoSeeder extends Seeder
             return;
         }
 
-        // 3. Borramos e insertamos
         Producto::truncate();
         $this->command->info("Tabla limpiada. Insertando " . count($productos) . " productos...");
 

@@ -7,9 +7,6 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
-    /**
-     * Nivel Oro: Lectura con filtros
-     */
     public function index(Request $request)
     {
         $query = Producto::query();
@@ -27,10 +24,8 @@ class ProductoController extends Controller
         return response()->json($query->get(), 200);
     }
 
-    
     public function store(Request $request)
     {
-        // Validación estricta
         $datos = $request->validate([
             'nombre' => 'required|string|max:255',
             'precio' => 'required|numeric|min:0',
@@ -42,6 +37,15 @@ class ProductoController extends Controller
 
         $producto = Producto::create($datos);
         return response()->json($producto, 201);
+    }
+
+    public function show($id)
+    {
+        $producto = Producto::find($id);
+        if (!$producto) {
+            return response()->json(['mensaje' => 'No encontrado'], 404);
+        }
+        return response()->json($producto, 200);
     }
 
     public function update(Request $request, $id)
@@ -60,30 +64,6 @@ class ProductoController extends Controller
         return response()->json($producto, 200);
     }
 
-    
-    public function show($id)
-    {
-        $producto = Producto::find($id);
-        if (!$producto) {
-            return response()->json(['mensaje' => 'No encontrado'], 404);
-        }
-        return response()->json($producto, 200);
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        $producto = Producto::find($id);
-        if (!$producto) {
-            return response()->json(['mensaje' => 'No encontrado'], 404);
-        }
-        
-        $producto->update($request->all());
-        
-        return response()->json($producto, 200);
-    }
-
-    
     public function destroy($id)
     {
         $producto = Producto::find($id);

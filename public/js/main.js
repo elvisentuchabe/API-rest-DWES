@@ -1,7 +1,9 @@
-/**
- * Lógica principal de SportSprint
- * Incluye: Rendimiento, Usuarios, Carrito y BÚSQUEDA POR VOZ (Con espera de 2s)
- */
+
+const URL_JSON = '/api/productos';
+let productosGlobales = []; 
+let usuarioActual = null; 
+let USUARIOS = []; 
+let timeoutBuscador = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     cargarUsuarios();
@@ -15,12 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initGeolocalizacion();
 });
 
-const URL_JSON = '/api/productos';
-let productosGlobales = []; 
-let usuarioActual = null; 
-let USUARIOS = []; 
-
-// --- GESTIÓN DE USUARIOS ---
+// --- GESTIÓN DE USUARIOS (Local) ---
 function cargarUsuarios() {
     const usuariosGuardados = localStorage.getItem('usuariosDB');
     if (usuariosGuardados) {
@@ -136,11 +133,15 @@ function actualizarUserUI() {
     }
 }
 
-// --- CARGA DE PRODUCTOS ---
-async function cargarProductos() {
+async function cargarProductos(filtros = '') {
     try {
-        const response = await fetch(URL_JSON);
-        if (!response.ok) throw new Error("Error al cargar JSON");
+        const contenedor = document.getElementById('contenedor-productos');
+        
+        if(contenedor) contenedor.innerHTML = '<div class="col-12 text-center text-white my-5"><div class="spinner-border text-primary" role="status"></div><p>Cargando catálogo...</p></div>';
+        const response = await fetch(URL_JSON + filtros);
+        
+        if (!response.ok) throw new Error("Error al conectar con la API");
+        
         productosGlobales = await response.json();
         
         const visitasLocales = JSON.parse(localStorage.getItem('contadorVisitas')) || {};
@@ -148,10 +149,16 @@ async function cargarProductos() {
             if (visitasLocales[prod.id]) prod.visitas += visitasLocales[prod.id];
         });
 
-        renderizarCarrusel(productosGlobales);
+        if (filtros === '') {
+            renderizarCarrusel(productosGlobales);
+        }
+        
         renderizarCatalogo(productosGlobales);
+
     } catch (error) { 
-        console.error("Error:", error);
+        console.error("Error API:", error);
+        const contenedor = document.getElementById('contenedor-productos');
+        if(contenedor) contenedor.innerHTML = `<div class="col-12 text-center text-danger mt-5"><h3>Error al cargar la tienda.</h3><p>Verifica que el servidor (php artisan serve) esté encendido.</p></div>`;
     }
 }
 
@@ -163,15 +170,14 @@ function renderizarCarrusel(productos) {
     let html = '';
     destacados.forEach((prod, index) => {
         const activeClass = index === 0 ? 'active' : ''; 
-        const loadingAttr = index === 0 ? 'eager' : 'lazy';
-        const priorityAttr = index === 0 ? 'fetchpriority="high"' : '';
-        
+        const imgSrc = prod.imagen.startsWith('http') ? prod.imagen : `/${prod.imagen}`;
+
         html += `
             <div class="carousel-item ${activeClass}">
-                <img src="${prod.imagen}" class="d-block w-100" alt="${prod.nombre}" 
-                     style="cursor: pointer" onclick="verDetalle(${prod.id})"
-                     width="1200" height="450" loading="${loadingAttr}" ${priorityAttr}> 
-                <div class="carousel-caption d-none d-md-block">
+                <img src="${imgSrc}" class="d-block w-100" alt="${prod.nombre}" 
+                     style="cursor: pointer; object-fit: cover;" onclick="verDetalle(${prod.id})"
+                     width="1200" height="450"> 
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
                     <h5 class="display-6 fw-bold text-uppercase text-primary">TOP VENTAS</h5>
                     <h3 class="text-white">${prod.nombre}</h3>
                     <p class="fs-5 text-white">${prod.precio} €</p>
@@ -185,17 +191,21 @@ function renderizarCarrusel(productos) {
 function renderizarCatalogo(productos) {
     const contenedor = document.getElementById('contenedor-productos');
     if (!contenedor) return;
+
     if (productos.length === 0) {
-        contenedor.innerHTML = `<div class="col-12 text-center mt-5"><h3 class="text-white">No hay productos.</h3></div>`;
+        contenedor.innerHTML = `<div class="col-12 text-center mt-5"><h3 class="text-white">No se encontraron productos con esos criterios.</h3></div>`;
         return;
     }
+
     let html = '';
     productos.forEach(prod => {
+        const imgSrc = prod.imagen.startsWith('http') ? prod.imagen : `/${prod.imagen}`;
+        
         html += `
             <div class="col">
                 <div class="card h-100 card-producto shadow-sm">
                     <div class="position-relative" style="cursor: pointer;" onclick="verDetalle(${prod.id})">
-                        <img src="${prod.imagen}" class="card-img-top" alt="${prod.nombre}" loading="lazy" width="300" height="250">
+                        <img src="${imgSrc}" class="card-img-top" alt="${prod.nombre}" loading="lazy" width="300" height="250" style="object-fit: cover;">
                         <div class="descripcion-overlay flex-column">
                              <i class="bi bi-cart-plus-fill display-3 icono-hover mb-2"></i>
                              <span class="btn btn-sm btn-outline-light rounded-pill px-3">VER DETALLES</span>
@@ -219,15 +229,18 @@ function renderizarCatalogo(productos) {
 function verDetalle(id) {
     const producto = productosGlobales.find(p => p.id === id);
     if (!producto) return;
+    
     producto.visitas++;
     const visitasLocales = JSON.parse(localStorage.getItem('contadorVisitas')) || {};
     visitasLocales[id] = (visitasLocales[id] || 0) + 1;
     localStorage.setItem('contadorVisitas', JSON.stringify(visitasLocales));
-    renderizarCarrusel(productosGlobales);
-
+    
+    
     document.getElementById('carruselDestacados').style.display = 'none';
     document.getElementById('seccion-catalogo').style.display = 'none';
     const seccionDetalle = document.getElementById('seccion-detalle');
+
+    const imgSrc = producto.imagen.startsWith('http') ? producto.imagen : `/${producto.imagen}`;
 
     seccionDetalle.innerHTML = `
         <div class="row mt-5 align-items-center">
@@ -235,16 +248,18 @@ function verDetalle(id) {
                 <button class="btn btn-outline-secondary" onclick="volverAlCatalogo()"><i class="bi bi-arrow-left"></i> VOLVER</button>
             </div>
             <div class="col-md-6">
-                <img src="${producto.imagen}" class="img-fluid rounded w-100 border border-secondary shadow-lg" loading="eager">
+                <img src="${imgSrc}" class="img-fluid rounded w-100 border border-secondary shadow-lg">
             </div>
             <div class="col-md-6 text-white">
-                <span class="badge bg-primary text-black mb-2">${producto.categoria}</span>
+                <span class="badge bg-primary text-black mb-2">${producto.categoria || 'Deporte'}</span>
                 <h1 class="display-4 fw-bold text-white">${producto.nombre}</h1>
-                <p class="text-muted lead">${producto.descripcion || ''}</p>
+                <p class="text-muted lead">${producto.descripcion || 'Sin descripción disponible.'}</p>
                 <h2 class="text-primary display-5 fw-bold my-4">${producto.precio} €</h2>
-                <button class="btn btn-primary btn-lg w-100 py-3" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio}, '${producto.imagen}')">
-                    AÑADIR A LA CESTA
-                </button>
+                <div class="d-grid gap-2">
+                     <button class="btn btn-primary btn-lg py-3" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio}, '${producto.imagen}')">
+                        AÑADIR A LA CESTA
+                    </button>
+                </div>
             </div>
         </div>`;
     seccionDetalle.style.display = 'block';
@@ -262,21 +277,23 @@ function obtenerClaveCarrito() {
 }
 
 function agregarAlCarrito(id, nombre, precio, imagen) {
-    // Si no hay usuario logueado, abrimos el modal de login y paramos
     if (!usuarioActual) {
-        mostrarNotificacion("Inicia sesión para comprar", "error");
-        const modalLogin = new bootstrap.Modal(document.getElementById('loginModal'));
-        modalLogin.show();
+        alert("Debes iniciar sesión para comprar.");
+        const modalLoginEl = document.getElementById('loginModal');
+        if(modalLoginEl) {
+             const modalLogin = new bootstrap.Modal(modalLoginEl);
+             modalLogin.show();
+        }
         return;
     }
 
-    // Si está logueado, procedemos normal
     const clave = `carrito_${usuarioActual.user}`;
     let carrito = JSON.parse(localStorage.getItem(clave)) || [];
     carrito.push({ id, nombre, precio, imagen });
     localStorage.setItem(clave, JSON.stringify(carrito));
     actualizarCarritoUI();
-    mostrarNotificacion("Producto añadido al carrito", "success");
+
+    console.log("Producto añadido");
 }
 
 function eliminarDelCarrito(index) {
@@ -294,8 +311,10 @@ function actualizarCarritoUI() {
     const carrito = JSON.parse(localStorage.getItem(clave)) || [];
     const contador = document.getElementById('contador-carrito');
     if(contador) contador.innerText = carrito.length;
+    
     const contenedorCarrito = document.getElementById('carrito-body');
     const totalElemento = document.getElementById('carrito-total');
+    
     if (contenedorCarrito && totalElemento) {
         contenedorCarrito.innerHTML = '';
         let total = 0;
@@ -304,7 +323,7 @@ function actualizarCarritoUI() {
         } else {
             carrito.forEach((prod, index) => {
                 total += prod.precio;
-                const imgSrc = prod.imagen || 'https://via.placeholder.com/50';
+                const imgSrc = prod.imagen && !prod.imagen.startsWith('http') ? `/${prod.imagen}` : prod.imagen;
                 contenedorCarrito.innerHTML += `
                     <div class="card mb-3 bg-dark text-white border-secondary">
                         <div class="row g-0 align-items-center">
@@ -324,33 +343,43 @@ function actualizarCarritoUI() {
     }
 }
 
-// --- BÚSQUEDA Y VOZ (CON TEMPORIZADOR DE SILENCIO) ---
 function configurarBusqueda() {
     const inputBuscar = document.getElementById('inputBuscar');
     const btnVoz = document.getElementById('btnVoz');
-    const botonesFiltro = document.querySelectorAll('.filter-btn');
+    const botonesFiltro = document.querySelectorAll('.filter-btn, .btn-categoria');
 
-    // 1. Filtrado por teclado
     inputBuscar.addEventListener('input', (e) => {
-        const texto = e.target.value.toLowerCase();
-        if (document.getElementById('seccion-detalle').style.display === 'block') volverAlCatalogo();
-        filtrarProductos(texto);
+        const texto = e.target.value;
+        
+        clearTimeout(timeoutBuscador);
+
+        timeoutBuscador = setTimeout(() => {
+            if (document.getElementById('seccion-detalle').style.display === 'block') volverAlCatalogo();
+            
+            if(texto.trim() === '') cargarProductos();
+            else cargarProductos(`?buscar=${texto}`);
+        }, 300);
     });
 
-    // 2. Filtrado por botones
     botonesFiltro.forEach(btn => {
         btn.addEventListener('click', (e) => {
+            botonesFiltro.forEach(b => b.classList.remove('active'));
+            const botonPulsado = e.target.closest('button');
+            if(botonPulsado) botonPulsado.classList.add('active');
+
             volverAlCatalogo();
-            botonesFiltro.forEach(b => { b.classList.remove('active'); });
-            e.target.classList.add('active');
-            const cat = e.target.getAttribute('data-cat');
+            
+            const cat = botonPulsado.getAttribute('data-cat') || botonPulsado.getAttribute('data-categoria');
             inputBuscar.value = '';
-            if (cat === 'all') renderizarCatalogo(productosGlobales);
-            else renderizarCatalogo(productosGlobales.filter(p => p.categoria.toLowerCase() === cat));
+
+            if (cat === 'all' || cat === 'todos' || !cat) {
+                cargarProductos(); 
+            } else {
+                cargarProductos(`?categoria=${cat}`);
+            }
         });
     });
 
-    // 3. LÓGICA DE VOZ MEJORADA (Espera 2s de silencio)
     if (btnVoz && inputBuscar) {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -385,7 +414,9 @@ function configurarBusqueda() {
             btnVoz.innerHTML = '<i class="bi bi-mic-fill text-white"></i>';
             inputBuscar.placeholder = "Buscar productos...";
             clearTimeout(temporizadorSilencio);
-            inputBuscar.dispatchEvent(new Event('input'));
+            
+            const textoFinal = inputBuscar.value;
+            if(textoFinal) cargarProductos(`?buscar=${textoFinal}`);
         };
 
         recognition.onresult = (event) => {
@@ -397,8 +428,6 @@ function configurarBusqueda() {
             
             inputBuscar.value = transcript;
             
-            inputBuscar.dispatchEvent(new Event('input'));
-
             temporizadorSilencio = setTimeout(() => {
                 recognition.stop();
             }, 2000);
@@ -407,41 +436,29 @@ function configurarBusqueda() {
         recognition.onerror = (event) => {
             console.error("Error voz:", event.error);
             btnVoz.innerHTML = '<i class="bi bi-mic-fill text-white"></i>';
-            if (event.error === 'not-allowed') {
-                alert("Permite el micrófono para usar la voz.");
-            }
         };
     }
 }
 
-function filtrarProductos(texto) {
-    const filtrados = productosGlobales.filter(prod => 
-        prod.nombre.toLowerCase().includes(texto) || (prod.descripcion && prod.descripcion.toLowerCase().includes(texto))
-    );
-    renderizarCatalogo(filtrados);
-}
-
 function checkCookies() {
-    // Comprobamos cookie real del navegador
     if (!document.cookie.includes("aceptar_cookies=true")) {
         const modalElement = document.getElementById('cookieModal');
-        const cookieModal = new bootstrap.Modal(modalElement, { backdrop: 'static', keyboard: false });
-        cookieModal.show();
-        
-        document.getElementById('btn-aceptar-cookies').addEventListener('click', () => {
-            // CREAR COOKIE REAL (BOM)
-            const datos = `host=${window.location.hostname}|path=${window.location.pathname}`;
-            // Expira en 365 días
-            const fecha = new Date();
-            fecha.setTime(fecha.getTime() + (365*24*60*60*1000));
+        if(modalElement) {
+            const cookieModal = new bootstrap.Modal(modalElement, { backdrop: 'static', keyboard: false });
+            cookieModal.show();
             
-            document.cookie = `aceptar_cookies=true; expires=${fecha.toUTCString()}; path=/`;
-            document.cookie = `info_ubicacion=${datos}; expires=${fecha.toUTCString()}; path=/`;
-            
-            // También guardamos en localStorage por comodidad
-            localStorage.setItem('cookiesAceptadas', 'true');
-            cookieModal.hide();
-        });
+            document.getElementById('btn-aceptar-cookies').addEventListener('click', () => {
+                const datos = `host=${window.location.hostname}|path=${window.location.pathname}`;
+                const fecha = new Date();
+                fecha.setTime(fecha.getTime() + (365*24*60*60*1000));
+                
+                document.cookie = `aceptar_cookies=true; expires=${fecha.toUTCString()}; path=/`;
+                document.cookie = `info_ubicacion=${datos}; expires=${fecha.toUTCString()}; path=/`;
+                
+                localStorage.setItem('cookiesAceptadas', 'true');
+                cookieModal.hide();
+            });
+        }
     }
 }
 
@@ -458,7 +475,6 @@ function initGeolocalizacion() {
             },
             (error) => {
                 geoDiv.innerHTML = `<i class="bi bi-geo-alt"></i> Ubicación no permitida`;
-                console.warn("Error geo:", error.message);
             }
         );
     } else {

@@ -243,7 +243,6 @@ function renderizarLicencias() {
             linkDisplay = `<small class="text-muted fst-italic">${item.link}</small>`;
         }
 
-        // Usamos img/ delante del nombre del archivo
         html += `
             <tr>
                 <td class="text-center">

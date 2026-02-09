@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('descripcion')->nullable();
             $table->string('imagen')->nullable();
             $table->string('categoria')->nullable();
-            $table->integer('visitas')->default(0); // Nuevo campo
-            $table->integer('stock')->default(0);   // Nuevo campo
+            $table->integer('visitas')->default(0);
+            $table->integer('stock')->default(0);
             $table->timestamps();
         });
     }
